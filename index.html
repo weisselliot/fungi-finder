@@ -1051,19 +1051,6 @@
             }).addTo(gridLayer);
           }
 
-          // N badge — north-facing aspect indicator
-          if (aspectModifier(cell.aspect) === 'north') {
-            L.marker(cell.b.center, {
-              icon: L.divIcon({
-                html: '<div class="north-badge" title="North-facing slope">N</div>',
-                className: '',
-                iconSize: [11, 11], iconAnchor: [6, -2],
-              }),
-              interactive: false,
-              zIndexOffset: 100,
-            }).addTo(gridLayer);
-          }
-
           // ── Step 8: Click interaction ────────────────────
           const resetStyle = () => poly.setStyle({ color: c.stroke, weight: 0.5 });
           poly.on('click', () => {
