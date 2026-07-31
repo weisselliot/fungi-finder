@@ -1,0 +1,4 @@
+data/*.gdb
+data/*.gdb.zip
+*.zip
+.DS_Store

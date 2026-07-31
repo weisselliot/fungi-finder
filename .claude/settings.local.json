@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx --yes serve . --listen 3000)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(curl -s \"https://api.inaturalist.org/v1/observations?taxon_name=Cantharellus&quality_grade=research&swlat=37.85&swlng=-122.28&nelat=37.95&nelng=-122.18&per_page=5\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); obs=d['results'][:2]; print\\('total_results:', d['total_results']\\); [print\\('loc:', o.get\\('location'\\), 'date:', o.get\\('observed_on'\\)\\) for o in obs]\")",
+      "Bash(curl -s \"https://api.inaturalist.org/v1/observations?taxon_name=Quercus%20agrifolia&quality_grade=research&swlat=37.85&swlng=-122.28&nelat=37.95&nelng=-122.18&per_page=5\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('total_results:', d['total_results']\\)\")",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s \"https://api.open-meteo.com/v1/forecast?latitude=37.875&longitude=-122.275&daily=precipitation_sum,temperature_2m_min&timezone=America%2FLos_Angeles&start_date=2026-01-06&end_date=2026-05-06\")",
+      "Bash(curl -s \"https://archive-api.open-meteo.com/v1/archive?latitude=37.875&longitude=-122.275&start_date=2026-01-06&end_date=2026-05-06&daily=precipitation_sum,temperature_2m_min&timezone=America%2FLos_Angeles\")",
+      "Bash(curl -sf \"https://api.opentopodata.org/v1/srtm90m?locations=37.90,-122.23\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d\\)\")",
+      "Bash(curl -sf \"https://api.opentopodata.org/v1/ned10m?locations=37.90,-122.23\")",
+      "Bash(curl -s \"https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_ExistingVegetationRegion05_01/MapServer/6?f=json\")",
+      "Bash(curl -s \"https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_ExistingVegetationRegion05_01/MapServer?f=json\")",
+      "Bash(curl -s \"https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_ExistingVegetationRegion05_01/MapServer/0?f=json\")",
+      "Bash(curl -s \"https://apps.fs.usda.gov/arcx/rest/services/EDW/?f=json\")",
+      "Bash(unzip -q S_USA.EVMid_R05_CentralCoast.gdb.zip)",
+      "Bash(python3 process_calveg.py)",
+      "Bash(python *)",
+      "Bash(python3 *)",
+      "Bash(curl -s --max-time 8 \"https://api.opentopodata.org/v1/ned10m?locations=37.90,-122.23|37.91,-122.22|37.89,-122.24\")",
+      "Bash(curl -s --max-time 8 \"https://api.open-elevation.com/api/v1/lookup?locations=37.90,-122.23|37.91,-122.22\")",
+      "Bash(curl -s --max-time 8 -X POST https://elevation.racemap.com/api/v1/elevation -H 'Content-Type: application/json' -d '[[37.90,-122.23],[37.91,-122.22]]')",
+      "Bash(curl -s --max-time 10 -I -X POST https://elevation.racemap.com/api/v1/elevation -H 'Content-Type: application/json' -H 'Origin: null' -d '[[37.90,-122.23],[37.91,-122.22],[37.89,-122.24],[37.88,-122.25],[37.92,-122.21]]')",
+      "Bash(curl -s --max-time 10 -X POST https://elevation.racemap.com/api/v1/elevation -H 'Content-Type: application/json' -d '[[37.90,-122.23],[37.91,-122.22],[37.89,-122.24],[37.88,-122.25],[37.92,-122.21]]')",
+      "Bash(curl -s --max-time 8 \"https://api.opentopodata.org/v1/ned10m?locations=37.90,-122.23|37.91,-122.22|37.89,-122.24|37.88,-122.25|37.92,-122.21\")",
+      "Bash(curl -s --max-time 8 -D - 'https://api.opentopodata.org/v1/ned10m?locations=37.90,-122.23' -H 'Origin: null')",
+      "Bash(curl -s --max-time 8 -D - -X OPTIONS https://elevation.racemap.com/api/v1/elevation -H 'Origin: null' -H 'Access-Control-Request-Method: POST')",
+      "Bash(open *)",
+      "Bash(unzip -q S_USA.EVMid_R05_NorCoastWest.gdb.zip)"
+    ]
+  }
+}
